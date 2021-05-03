@@ -1,2 +1,2 @@
-# flashcard_db
+# flashcard_database
 Django REST-API for FlashCard App
