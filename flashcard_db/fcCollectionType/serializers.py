@@ -5,4 +5,4 @@ from .models import FcCollectionType
 class FcCollectionTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = FcCollectionType
-        fields = [fcCollectionType_id, fcCollectionType_name, fcCollectionType_desc]
+        fields = ['fcCollectionType_id', 'fcCollectionType_name', 'fcCollectionType_desc']
