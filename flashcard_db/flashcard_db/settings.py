@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'rest_framework',
+    'fcCollections.apps.FcCollectionsConfig',
+    'fcCollectionType.apps.FcCollectionTypeConfig',
+    'flashCard.apps.FlashcardConfig'
 ]
 
 MIDDLEWARE = [
