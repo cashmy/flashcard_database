@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "91552bd4-9f36-48af-9230-4be055c525df",
+		"name": "FlashCard Database App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Collections",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/fcCollections/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fcCollections",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Collection Types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/fcCollectionType/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fcCollectionType",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All FlashCards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/flashCard/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"flashCard",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a FlashCard (Add)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcCollection_id\": 1,\r\n    \"face\": \"status 2\",\r\n    \"back\": \"Test Description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/flashCard/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"flashCard",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Collection (Add)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcCollection_title\": \"Basic WD Set 3\",\r\n    \"fcCollectionType_id\": \"WD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/fcCollections/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fcCollections",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Collection Type (Add)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcCollectionType_id\": \"M*\",\r\n    \"fcCollectionType_name\": \"Multiple Choice\",\r\n    \"fcCollectionType_desc\": \"Multiple Choice Question - Correct answer on back of card\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/fcCollectionType/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fcCollectionType",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a FlashCard",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcCollection_id\": 1,\r\n    \"face\": \"status 2\",\r\n    \"back\": \"Test Description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/flashCard/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"flashCard",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Collection Type",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcCollection_id\": 1,\r\n    \"face\": \"status 2\",\r\n    \"back\": \"Test Description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/fcCollectionType/M*",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fcCollectionType",
+						"M*"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Collection",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcCollection_id\": 1,\r\n    \"face\": \"status 2\",\r\n    \"back\": \"Test Description\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/fcCollections/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fcCollections",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put a FlashCard (Update)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"fcCollection_id\": 1,\r\n    \"face\": \"status 2 - (Mod)\",\r\n    \"back\": \"Test Description - (Mod)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/flashCard/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"flashCard",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put a Collection (Update)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcCollection_id\": 3,\r\n    \"fcCollection_title\": \"Basic WD Set 3 (Mod)\",\r\n    \"fcCollectionType_id\": \"WD\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/fcCollections/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fcCollections",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put a Collection Type (Update)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fcCollectionType_id\": \"M*\",\r\n    \"fcCollectionType_name\": \"Multiple Choice - (Mod)\",\r\n    \"fcCollectionType_desc\": \"Multiple Choice Question - Correct answer on back of card - (Mod)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/fcCollectionType/M*",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"fcCollectionType",
+						"M*"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
