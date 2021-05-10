@@ -9,7 +9,6 @@ from rest_framework import status
 
 
 class FlashCardList(APIView):
-
     def get(self, request):
         flashCard = FlashCard.objects.all()
         serializer = FlashCardSerializer(flashCard, many=True)
@@ -23,8 +22,14 @@ class FlashCardList(APIView):
         return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
 
 
-class FlashCardDetail(APIView):
+class FlashCardCollection(APIView):
+    def get(self, request, collection_id):
+        flashCard = FlashCard.objects.all().filter(fcCollection_id=collection_id)
+        serializer = FlashCardSerializer(flashCard, many=True)
+        return Response(serializer.data)
 
+
+class FlashCardDetail(APIView):
     def get_by_pk(self, pk):
         try:
             return FlashCard.objects.get(pk=pk)
@@ -44,3 +49,4 @@ class FlashCardDetail(APIView):
         flashCard = self.get_by_pk(pk)
         flashCard.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
